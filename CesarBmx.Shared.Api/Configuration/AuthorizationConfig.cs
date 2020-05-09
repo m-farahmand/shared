@@ -6,7 +6,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class AuthorizationConfig
     {
-        public static IServiceCollection UsePinnacleAuthorization(this IServiceCollection services, Type permissions)
+        public static IServiceCollection UseSharedAuthorization(this IServiceCollection services, Type permissions)
         {
             services.AddAuthorization(options =>
             {

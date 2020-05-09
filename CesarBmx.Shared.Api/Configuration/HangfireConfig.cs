@@ -8,12 +8,12 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class HangfireConfig
     {
-        public static IServiceCollection ConfigurePinnacleHangfire(this IServiceCollection services)
+        public static IServiceCollection ConfigureSharedHangfire(this IServiceCollection services)
         {
             // Return
             return services;
         }
-        public static IApplicationBuilder ConfigurePinnacleHangfire(this IApplicationBuilder app, bool enableBasicAuthentication = true)
+        public static IApplicationBuilder ConfigureSharedHangfire(this IApplicationBuilder app, bool enableBasicAuthentication = true)
         {
             // Configure
             app.UseHangfireDashboard("/hangfire", new DashboardOptions

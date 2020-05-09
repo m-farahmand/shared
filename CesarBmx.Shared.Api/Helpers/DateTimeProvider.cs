@@ -1,9 +1,10 @@
 ﻿using System;
+using CesarBmx.Shared.Common.Providers;
 using Microsoft.AspNetCore.Http;
 
 namespace CesarBmx.Shared.Api.Helpers
 {
-    public class DateTimeProvider
+    public class DateTimeProvider: IDateTimeProvider
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
@@ -12,7 +13,7 @@ namespace CesarBmx.Shared.Api.Helpers
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public DateTime GetDateFromHeader()
+        public DateTime GetDateTime()
         {
             var date = DateTime.Today.AddDays(1);
             var httpContext = _httpContextAccessor.HttpContext;

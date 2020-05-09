@@ -12,7 +12,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class Log4NetConfig
     {
-        public static ILoggerFactory ConfigurePinnacleLog4Net(this ILoggerFactory logger, Assembly assembly, IHostEnvironment environment, IConfiguration configuration)
+        public static ILoggerFactory ConfigureSharedLog4Net(this ILoggerFactory logger, Assembly assembly, IHostEnvironment environment, IConfiguration configuration)
         {
             // Grab AppSettings
             var appSettings = new AppSettings();

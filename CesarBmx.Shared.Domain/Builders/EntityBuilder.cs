@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CesarBmx.Shared.Domain.Entities;
-using CesarBmx.Shared.Domain.Expressions;
-
 
 namespace CesarBmx.Shared.Domain.Builders
 {
@@ -14,7 +12,7 @@ namespace CesarBmx.Shared.Domain.Builders
             var entitiesToAdd = new List<T>();
             foreach (var newEntity in newEntities)
             {
-                if (entities.FirstOrDefault(EntityExpression.Entity(newEntity.Id).Compile()) == null)
+                if (entities.FirstOrDefault(x=>x.Id == newEntity.Id) == null)
                     entitiesToAdd.Add(newEntity);
             }
 
@@ -27,7 +25,7 @@ namespace CesarBmx.Shared.Domain.Builders
             var entitiesToUpdate= new List<T>();
             foreach (var newEntity in newEntities)
             {
-                if (entities.FirstOrDefault(EntityExpression.Entity(newEntity.Id).Compile()) != null)
+                if (entities.FirstOrDefault(x => x.Id == newEntity.Id) != null)
                     entitiesToUpdate.Add(newEntity);
             }
 
@@ -40,7 +38,7 @@ namespace CesarBmx.Shared.Domain.Builders
             var entitiesToRemove = new List<T>();
             foreach (var entity in entities)
             {
-                if (newEntities.FirstOrDefault(EntityExpression.Entity(entity.Id).Compile()) == null)
+                if (newEntities.FirstOrDefault(x => x.Id == entity.Id) == null)
                     entitiesToRemove.Add(entity);
             }
 

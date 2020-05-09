@@ -18,7 +18,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class AuthenticationConfig
     {
-        public static IServiceCollection UsePinnacleAuthentication(this IServiceCollection services,
+        public static IServiceCollection UseSharedAuthentication(this IServiceCollection services,
             IConfiguration configuration)
         {
             // Grab AuthenticationSettings
@@ -80,7 +80,7 @@ namespace CesarBmx.Shared.Api.Configuration
 
             return services;
         }
-        public static IServiceCollection UseFakeAuthentication(this IServiceCollection services,
+        public static IServiceCollection UseSharedFakeAuthentication(this IServiceCollection services,
             IConfiguration configuration)
         {
             services.AddAuthentication("FakeAuthentication")

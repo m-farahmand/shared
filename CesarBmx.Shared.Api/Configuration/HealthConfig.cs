@@ -10,7 +10,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class HealthConfig
     {
-        public static IServiceCollection ConfigurePinnacleHealth(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureSharedHealth(this IServiceCollection services, IConfiguration configuration)
         {
             // Grab AppSettings
             var appSettings = new AppSettings();
@@ -26,7 +26,7 @@ namespace CesarBmx.Shared.Api.Configuration
             // Return
             return services;
         }
-        public static IApplicationBuilder ConfigurePinnacleHealth(this IApplicationBuilder app)
+        public static IApplicationBuilder ConfigureSharedHealth(this IApplicationBuilder app)
         {
             // Api
             app.UseEndpoints(config =>

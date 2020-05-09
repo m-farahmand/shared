@@ -6,7 +6,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class FluentValidationConfigConfig
     {
-        public static IMvcBuilder ConfigurePinnacleFluentValidation(this IMvcBuilder mvcBuilder, Assembly assembly)
+        public static IMvcBuilder ConfigureFluentValidation(this IMvcBuilder mvcBuilder, Assembly assembly)
         {
             mvcBuilder.AddFluentValidation(fv => fv
                 .RegisterValidatorsFromAssembly(assembly)

@@ -5,7 +5,7 @@ namespace CesarBmx.Shared.Api.Helpers
 {
     public static class HostBuilderExtensions
     {
-        public static IHostBuilder ConfigurePinnacleLogging(this IHostBuilder hostBuilder)
+        public static IHostBuilder ConfigureSharedLogging(this IHostBuilder hostBuilder)
         {
             hostBuilder.ConfigureLogging(logging =>
             {

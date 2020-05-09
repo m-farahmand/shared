@@ -7,7 +7,7 @@ namespace CesarBmx.Shared.Api.Configuration
 {
     public static class SerializationConfig
     {
-        public static IMvcBuilder ConfigurePinnacleSerialization(this IMvcBuilder mvcBuilder)
+        public static IMvcBuilder ConfigureSharedSerialization(this IMvcBuilder mvcBuilder)
         {
             mvcBuilder.AddNewtonsoftJson(options =>
             {

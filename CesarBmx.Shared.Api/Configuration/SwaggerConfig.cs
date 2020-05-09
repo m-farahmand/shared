@@ -19,7 +19,7 @@ namespace CesarBmx.Shared.Api.Configuration
         /// <param name="appName">The name of the application (e.g. Fraud API)</param>
         /// <param name="type">Swagger example type</param>
         /// <returns></returns>
-        public static IServiceCollection ConfigurePinnacleSwagger(this IServiceCollection services, string appName, Type type)
+        public static IServiceCollection ConfigureSharedSwagger(this IServiceCollection services, string appName, Type type)
         {
             services.AddSwaggerGen(c =>
             {
@@ -84,7 +84,7 @@ namespace CesarBmx.Shared.Api.Configuration
             return services;
         }
 
-        public static IApplicationBuilder ConfigurePinnacleSwagger(this IApplicationBuilder app)
+        public static IApplicationBuilder ConfigureSharedSwagger(this IApplicationBuilder app)
         {
             // Enable middleware to serve generated Swagger as a JSON endpoint.'Method 'Apply' in type 'Swashbuckle.AspNetCore.Filters.ExamplesOperationFilter
             app.UseSwagger(c =>
