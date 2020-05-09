@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>Common library in .Net Core (API layer)</Description>
-    <Authors>IT Dev</Authors>
+    <Description>Common library (API layer)</Description>
+    <Authors>cesarbmx</Authors>
     <Product>CesarBmx.Shared.Api</Product>
-    <Company>Pinnacle</Company>
+    <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.6.4</Version>
-    <RepositoryUrl>https://stash.pinnacle.com/projects/CUS/repos/shared/</RepositoryUrl>
+    <Version>1.0.0</Version>
+    <RepositoryUrl>https://github.com/cesarbmx/shared</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
