@@ -3,31 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Application", "CesarBmx.Application\CesarBmx.Application.csproj", "{72063EFA-67BB-440C-83BD-0DA94603EBCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Application", "CesarBmx.Shared.Application\CesarBmx.Shared.Application.csproj", "{72063EFA-67BB-440C-83BD-0DA94603EBCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Api", "CesarBmx.Api\CesarBmx.Api.csproj", "{7DD933AF-8B62-4DE6-A1EF-4A8EBEFB905E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Api", "CesarBmx.Shared.Api\CesarBmx.Shared.Api.csproj", "{7DD933AF-8B62-4DE6-A1EF-4A8EBEFB905E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Persistence", "CesarBmx.Persistence\CesarBmx.Persistence.csproj", "{BA6FFC44-75CA-46FB-ABAB-FD135C1CAC35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Persistence", "CesarBmx.Shared.Persistence\CesarBmx.Shared.Persistence.csproj", "{BA6FFC44-75CA-46FB-ABAB-FD135C1CAC35}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Logging", "CesarBmx.Logging\CesarBmx.Logging.csproj", "{C83F9061-0296-4C12-B20F-F778E73F9AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Logging", "CesarBmx.Shared.Logging\CesarBmx.Shared.Logging.csproj", "{C83F9061-0296-4C12-B20F-F778E73F9AFB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Common", "CesarBmx.Common\CesarBmx.Common.csproj", "{1E71D1E8-B119-4D7E-A538-1E9D7D366335}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Common", "CesarBmx.Shared.Common\CesarBmx.Shared.Common.csproj", "{1E71D1E8-B119-4D7E-A538-1E9D7D366335}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Caching", "CesarBmx.Caching\CesarBmx.Caching.csproj", "{F5E178CB-4721-4F8E-870A-29DB49032CF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Caching", "CesarBmx.Shared.Caching\CesarBmx.Shared.Caching.csproj", "{F5E178CB-4721-4F8E-870A-29DB49032CF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Authentication", "CesarBmx.Authentication\CesarBmx.Authentication.csproj", "{2D3C8D7F-8F1E-40C4-BA7E-1B04E9BBC92E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Authentication", "CesarBmx.Shared.Authentication\CesarBmx.Shared.Authentication.csproj", "{2D3C8D7F-8F1E-40C4-BA7E-1B04E9BBC92E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Serialization", "CesarBmx.Serialization\CesarBmx.Serialization.csproj", "{5B8C6825-5A28-4C58-9D7D-9C755B0086E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Serialization", "CesarBmx.Shared.Serialization\CesarBmx.Shared.Serialization.csproj", "{5B8C6825-5A28-4C58-9D7D-9C755B0086E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.- Layers", "1.- Layers", "{5A4A1DBD-2EC1-40FD-B9E5-6DBBCA721A8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.- CrossCutting", "2.- CrossCutting", "{EF532B66-8BFD-4021-A301-861D61E8DED7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Tests", "CesarBmx.Tests\CesarBmx.Tests.csproj", "{6880B380-AD45-41CF-A7B7-8E287E84BCB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Tests", "CesarBmx.Shared.Tests\CesarBmx.Shared.Tests.csproj", "{6880B380-AD45-41CF-A7B7-8E287E84BCB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Health", "CesarBmx.Health\CesarBmx.Health.csproj", "{BB83C351-F759-4FAC-9E9E-22FABC494C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Health", "CesarBmx.Shared.Health\CesarBmx.Shared.Health.csproj", "{BB83C351-F759-4FAC-9E9E-22FABC494C84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.CodeGeneration", "CesarBmx.CodeGeneration\CesarBmx.CodeGeneration.csproj", "{4E89835A-270B-4296-ABA5-2A795F4881E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.CodeGeneration", "CesarBmx.Shared.CodeGeneration\CesarBmx.Shared.CodeGeneration.csproj", "{4E89835A-270B-4296-ABA5-2A795F4881E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
