@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>cesarbmx</Authors>
+    <Description>Common library (Code Generation)</Description>
+    <RepositoryUrl>https://github.com/cesarbmx/shared</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
