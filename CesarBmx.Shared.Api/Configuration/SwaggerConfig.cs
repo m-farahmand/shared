@@ -91,7 +91,7 @@ namespace CesarBmx.Shared.Api.Configuration
                 c.RouteTemplate = route + "/{documentName}/swagger.json";
                 c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
                 {
-                    swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"https://{httpReq.Host.Value}{httpReq.PathBase}/{route}" } };
+                    swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"https://{httpReq.Host.Value}{httpReq.PathBase}" } };
                 });
             });
 
