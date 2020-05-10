@@ -38,10 +38,6 @@ namespace CesarBmx.Shared.Persistence.Repositories
             // Get single by expression
             return await _repository.GetSingle(expression);
         }
-        public async Task<DateTime> GetNewestTime()
-        {
-            return await _repository.GetNewestTime();
-        }
         public void Add(TEntity entity, DateTime time)
         {
             // Add

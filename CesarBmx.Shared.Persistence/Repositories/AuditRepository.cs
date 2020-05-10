@@ -68,10 +68,6 @@ namespace CesarBmx.Shared.Persistence.Repositories
         {
             return Task.FromResult(List.FirstOrDefault(expression.Compile()));
         }
-        public Task<DateTime> GetNewestTime()
-        {
-            return Task.FromResult(List.Max(x => x.Time));
-        }
         public void Add(TEntity entity, DateTime time)
         {
             List.Add(entity);

@@ -12,7 +12,6 @@ namespace CesarBmx.Shared.Persistence.Repositories
         Task<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> expression);
         Task<TEntity> GetSingle(object id);
         Task<TEntity> GetSingle(Expression<Func<TEntity, bool>> expression);
-        Task<DateTime> GetNewestTime();
         void Add(TEntity entity, DateTime time);
         void AddRange(List<TEntity> entities, DateTime time);
         void Update(TEntity entity, DateTime time);
