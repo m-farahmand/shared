@@ -50,7 +50,7 @@ namespace CesarBmx.Shared.Logging.Extensions
                     {
                         str += pref + item.Key + $"=\"{item.Value}\", ";
                     }
-                    else if (item.Key == "JobFailed")
+                    else if (item.Key == "Failed")
                     {
                         str += pref + item.Key + $"=\"{item.Value}\", ";
                     }

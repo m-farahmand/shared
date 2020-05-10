@@ -57,19 +57,19 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual($"ObjectId=1, SubClass=\"{DateTime.MinValue}\"", str);
         }
         [TestMethod]
-        public void Test_WithJobFailed()
+        public void Test_WithFailed()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
             {
-                {"JobFailed", "Exception message with spaces"}
+                {"Failed", "Exception message with spaces"}
             };
 
             //Act
             var str = dictionary.AsSplunkKeyValueString();
 
             //Assert
-            Assert.AreEqual("JobFailed=\"Exception message with spaces\"", str);
+            Assert.AreEqual("Failed=\"Exception message with spaces\"", str);
         }
         [TestMethod]
         public void Test_WithSpaces()
