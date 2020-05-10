@@ -84,22 +84,21 @@ namespace CesarBmx.Shared.Api.Configuration
             return services;
         }
 
-        public static IApplicationBuilder ConfigureSharedSwagger(this IApplicationBuilder app)
+        public static IApplicationBuilder ConfigureSharedSwagger(this IApplicationBuilder app, string appName, string route)
         {
-            // Enable middleware to serve generated Swagger as a JSON endpoint.'Method 'Apply' in type 'Swashbuckle.AspNetCore.Filters.ExamplesOperationFilter
             app.UseSwagger(c =>
-                // Add host
+            {
+                c.RouteTemplate = route + "/{documentName}/swagger.json";
                 c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
                 {
-                    swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"https://{httpReq.Host.Value}{httpReq.PathBase}" } };
-                })
-            );
+                    swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"https://{httpReq.Host.Value}{httpReq.PathBase}/{route}" } };
+                });
+            });
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("swagger/v1/swagger.json", string.Empty);
-                c.RoutePrefix = string.Empty; // Serve the Swagger UI at the app's root
+                c.SwaggerEndpoint("v1/swagger.json", appName);
+                c.RoutePrefix = route;
             });
 
             return app;
