@@ -76,7 +76,7 @@ namespace CesarBmx.Shared.Api.Configuration
             });
 
             // Add swagger examples
-            services.AddSwaggerExamplesFromAssemblyOf(typeof(BadRequestExample), type);
+            services.AddSwaggerExamplesFromAssemblyOf(typeof(BadRequestResponseExample), type);
 
             // Enums as strings
             services.AddSwaggerGenNewtonsoftSupport();

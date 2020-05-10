@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using CesarBmx.Shared.Api.ActionFilters;
-using CesarBmx.Shared.Api.Middlewares;
 
 namespace CesarBmx.Shared.Api.Configuration
 {
@@ -21,8 +20,6 @@ namespace CesarBmx.Shared.Api.Configuration
         public static IApplicationBuilder ConfigureSharedElmah(this IApplicationBuilder app)
         {
             app.UseElmah();
-
-            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             return app;
         }

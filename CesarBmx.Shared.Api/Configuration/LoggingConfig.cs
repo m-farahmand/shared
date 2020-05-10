@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace CesarBmx.Shared.Api.Helpers
+namespace CesarBmx.Shared.Api.Configuration
 {
-    public static class HostBuilderExtensions
+    public static class LoggingConfig
     {
         public static IHostBuilder ConfigureSharedLogging(this IHostBuilder hostBuilder)
         {
