@@ -11,7 +11,7 @@ namespace CesarBmx.Shared.Domain.Entities
         public string Entity { get; private set; }
         public string EntityId { get; private set; }
         public string Json { get; private set; }
-        public DateTime Time { get; private set; }
+        public DateTime CreatedAt { get; private set; }
 
         public Log() { }
         public Log(string action, object entity, string entityId, DateTime time)
@@ -26,7 +26,7 @@ namespace CesarBmx.Shared.Domain.Entities
             Action = action;
             Entity = entityName;
             EntityId = entityId;
-            Time = time;
+            CreatedAt = time;
             Json = JsonConvertHelper.SerializeObjectRaw(entity);
         }
         public T ModelJsonToObject<T>()

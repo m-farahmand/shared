@@ -20,6 +20,7 @@ namespace CesarBmx.Shared.Api.Configuration
             services.AddHealthChecksUI(setupSettings: setup =>
             {
                 setup.AddHealthCheckEndpoint(appSettings.ApplicationId, "/health");
+                setup.SetEvaluationTimeInSeconds(60 * 10);
                 setup.DisableDatabaseMigrations();
             }).AddInMemoryStorage();
 
