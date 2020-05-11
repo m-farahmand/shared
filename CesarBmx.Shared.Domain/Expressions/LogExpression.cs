@@ -8,7 +8,7 @@ namespace CesarBmx.Shared.Domain.Expressions
     {
         public static Expression<Func<Log, bool>> AuditLog(string entity, DateTime createdAt)
         {
-            return x => x.Entity == createdAt && x.CreatedAt <= createdAt;
+            return x => x.Entity == entity && x.CreatedAt <= createdAt;
         }
     }
 }

@@ -7,7 +7,7 @@
     <Product>CesarBmx.Shared.Api</Product>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0</Version>
+    <Version>1.0.2</Version>
     <RepositoryUrl>https://github.com/cesarbmx/shared</RepositoryUrl>
   </PropertyGroup>
 
