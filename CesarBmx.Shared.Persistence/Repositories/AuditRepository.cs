@@ -4,8 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using CesarBmx.Shared.Common.Providers;
-using CesarBmx.Shared.Domain.Builders;
-using CesarBmx.Shared.Domain.Entities;
+using CesarBmx.Shared.Domain.ModelBuilders;
+using CesarBmx.Shared.Domain.Models;
 using CesarBmx.Shared.Domain.Expressions;
 
 namespace CesarBmx.Shared.Persistence.Repositories

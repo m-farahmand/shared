@@ -10,4 +10,9 @@
     <RepositoryUrl>https://stash.pinnacle.com/projects/CUS/repos/shared/</RepositoryUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CesarBmx.Shared.Common\CesarBmx.Shared.Common.csproj" />
+    <ProjectReference Include="..\CesarBmx.Shared.Serialization\CesarBmx.Shared.Serialization.csproj" />
+  </ItemGroup>
+
 </Project>

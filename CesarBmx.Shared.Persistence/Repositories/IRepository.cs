@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CesarBmx.Shared.Domain.Entities;
+using CesarBmx.Shared.Domain.Models;
 
 namespace CesarBmx.Shared.Persistence.Repositories
 {

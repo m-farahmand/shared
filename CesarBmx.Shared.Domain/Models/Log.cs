@@ -1,7 +1,7 @@
 ﻿using System;
 using CesarBmx.Shared.Serialization.Helpers;
 
-namespace CesarBmx.Shared.Domain.Entities
+namespace CesarBmx.Shared.Domain.Models
 {
     public class Log : IEntity
     {

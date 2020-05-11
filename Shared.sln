@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.CodeGenerat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.- Tests", "3.- Tests", "{55812AAE-BB79-4B00-A2AA-10772C180619}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CesarBmx.Shared.Domain", "CesarBmx.Shared.Domain\CesarBmx.Shared.Domain.csproj", "{A53C7722-6190-498E-A0ED-3423EE224AAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{4E89835A-270B-4296-ABA5-2A795F4881E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E89835A-270B-4296-ABA5-2A795F4881E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E89835A-270B-4296-ABA5-2A795F4881E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53C7722-6190-498E-A0ED-3423EE224AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53C7722-6190-498E-A0ED-3423EE224AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53C7722-6190-498E-A0ED-3423EE224AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53C7722-6190-498E-A0ED-3423EE224AAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{6880B380-AD45-41CF-A7B7-8E287E84BCB9} = {55812AAE-BB79-4B00-A2AA-10772C180619}
 		{BB83C351-F759-4FAC-9E9E-22FABC494C84} = {EF532B66-8BFD-4021-A301-861D61E8DED7}
 		{4E89835A-270B-4296-ABA5-2A795F4881E1} = {EF532B66-8BFD-4021-A301-861D61E8DED7}
+		{A53C7722-6190-498E-A0ED-3423EE224AAA} = {5A4A1DBD-2EC1-40FD-B9E5-6DBBCA721A8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CE5D10D-B679-45C9-81E4-11870F30F922}

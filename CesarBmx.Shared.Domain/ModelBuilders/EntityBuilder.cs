@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CesarBmx.Shared.Domain.Entities;
+using CesarBmx.Shared.Domain.Models;
 
-namespace CesarBmx.Shared.Domain.Builders
+namespace CesarBmx.Shared.Domain.ModelBuilders
 {
     public static class EntityBuilder
     {
