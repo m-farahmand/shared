@@ -38,50 +38,50 @@ namespace CesarBmx.Shared.Persistence.Repositories
             // Get single by expression
             return await _dbSet.FirstOrDefaultAsync(expression);
         }
-        public void Add(TEntity entity, DateTime time)
+        public void Add(TEntity entity)
         {
             // Add
             _dbSet.Add(entity);
         }
-        public void AddRange(List<TEntity> entities, DateTime time)
+        public void AddRange(List<TEntity> entities)
         {
             // Add
             foreach (var entity in entities)
             {
-                Add(entity, time);
+                Add(entity);
             }
         }
-        public void Update(TEntity entity, DateTime time)
+        public void Update(TEntity entity)
         {
             // Update
             _dbSet.Update(entity);
         }
-        public void UpdateRange(List<TEntity> entities, DateTime time)
+        public void UpdateRange(List<TEntity> entities)
         {
             // Update
             foreach (var entity in entities)
             {
-                Update(entity, time);
+                Update(entity);
             }
         }
-        public void Remove(TEntity entity, DateTime time)
+        public void Remove(TEntity entity)
         {
             // Remove
             _dbSet.Remove(entity);
         }
-        public void RemoveRange(List<TEntity> entities, DateTime time)
+        public void RemoveRange(List<TEntity> entities)
         {
             // Remove
             foreach (var entity in entities)
             {
-                Remove(entity, time);
+                Remove(entity);
             }
         }
-        public void UpdateCollection(List<TEntity> currentEntities, List<TEntity> newEntities, DateTime time)
+        public void UpdateCollection(List<TEntity> currentEntities, List<TEntity> newEntities)
         {
-            AddRange(EntityBuilder.BuildEntitiesToAdd(currentEntities, newEntities), time);
-            UpdateRange(EntityBuilder.BuildEntitiesToUpdate(currentEntities, newEntities), time);
-            RemoveRange(EntityBuilder.BuildEntitiesToRemove(currentEntities, newEntities), time);
+            AddRange(EntityBuilder.BuildEntitiesToAdd(currentEntities, newEntities));
+            UpdateRange(EntityBuilder.BuildEntitiesToUpdate(currentEntities, newEntities));
+            RemoveRange(EntityBuilder.BuildEntitiesToRemove(currentEntities, newEntities));
         }
     }
 }

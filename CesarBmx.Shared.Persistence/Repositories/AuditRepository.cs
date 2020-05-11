@@ -13,9 +13,9 @@ namespace CesarBmx.Shared.Persistence.Repositories
     public class AuditRepository<TEntity>: IRepository<TEntity> where TEntity: class, IEntity
     {
         protected readonly List<TEntity> List;
-        private readonly Repository<Log> _logRepository;
+        private readonly Repository<AuditLog> _logRepository;
 
-        public AuditRepository(Repository<Log> logRepository, IDateTimeProvider dateTimeProvider)
+        public AuditRepository(Repository<AuditLog> logRepository, IDateTimeProvider dateTimeProvider)
         {
             List = new List<TEntity>();
             _logRepository = logRepository;
@@ -25,9 +25,9 @@ namespace CesarBmx.Shared.Persistence.Repositories
 
         private void LoadAudit(DateTime dateTime)
         {
-            var log = _logRepository.GetAll(LogExpression.AuditLog(typeof(TEntity).Name, dateTime)).Result;
+            var auditLog = _logRepository.GetAll(AuditLogExpression.AuditLog(typeof(TEntity).Name, dateTime)).Result;
 
-            foreach (var logEntry in log)
+            foreach (var logEntry in auditLog)
             {
                 TEntity originalValue;
                 TEntity newValue;
@@ -68,38 +68,38 @@ namespace CesarBmx.Shared.Persistence.Repositories
         {
             return Task.FromResult(List.FirstOrDefault(expression.Compile()));
         }
-        public void Add(TEntity entity, DateTime time)
+        public void Add(TEntity entity)
         {
             List.Add(entity);
         }
-        public void AddRange(List<TEntity> entities, DateTime time)
+        public void AddRange(List<TEntity> entities)
         {
             List.AddRange(entities);
         }
-        public void Update(TEntity entity, DateTime time)
+        public void Update(TEntity entity)
         {
 
         }
-        public void UpdateRange(List<TEntity> entities, DateTime time)
+        public void UpdateRange(List<TEntity> entities)
         {
             
         }
-        public void Remove(TEntity entity, DateTime time)
+        public void Remove(TEntity entity)
         {
             List.Remove(entity);
         }
-        public void RemoveRange(List<TEntity> entities, DateTime time)
+        public void RemoveRange(List<TEntity> entities)
         {
             foreach (var entity in entities)
             {
-                Remove(entity, time);
+                Remove(entity);
             }
         }
-        public void UpdateCollection(List<TEntity> currentEntities, List<TEntity> newEntities, DateTime time)
+        public void UpdateCollection(List<TEntity> currentEntities, List<TEntity> newEntities)
         {
-            AddRange(EntityBuilder.BuildEntitiesToAdd(currentEntities, newEntities), time);
-            UpdateRange(EntityBuilder.BuildEntitiesToUpdate(currentEntities, newEntities), time);
-            RemoveRange(EntityBuilder.BuildEntitiesToRemove(currentEntities, newEntities), time);
+            AddRange(EntityBuilder.BuildEntitiesToAdd(currentEntities, newEntities));
+            UpdateRange(EntityBuilder.BuildEntitiesToUpdate(currentEntities, newEntities));
+            RemoveRange(EntityBuilder.BuildEntitiesToRemove(currentEntities, newEntities));
         }
     }
 }

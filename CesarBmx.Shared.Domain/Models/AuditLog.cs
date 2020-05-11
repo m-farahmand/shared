@@ -3,7 +3,7 @@ using CesarBmx.Shared.Serialization.Helpers;
 
 namespace CesarBmx.Shared.Domain.Models
 {
-    public class Log : IEntity
+    public class AuditLog : IEntity
     {
         public string Id => LogId.ToString();
         public Guid LogId { get; private set; }
@@ -13,8 +13,8 @@ namespace CesarBmx.Shared.Domain.Models
         public string Json { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
-        public Log() { }
-        public Log(string action, object entity, string entityId, DateTime time)
+        public AuditLog() { }
+        public AuditLog(string action, object entity, string entityId, DateTime createdAt)
         {
             var entityName = entity.GetType().Name;
             if (entityName == "List`1")
@@ -26,7 +26,7 @@ namespace CesarBmx.Shared.Domain.Models
             Action = action;
             Entity = entityName;
             EntityId = entityId;
-            CreatedAt = time;
+            CreatedAt = createdAt;
             Json = JsonConvertHelper.SerializeObjectRaw(entity);
         }
         public T ModelJsonToObject<T>()
