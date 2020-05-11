@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>Common library in (Health)</Description>
+    <Description>Common library (Health)</Description>
     <Company></Company>
     <Authors>cesarbmx</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
