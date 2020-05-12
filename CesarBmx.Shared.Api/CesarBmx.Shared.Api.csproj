@@ -11,6 +11,10 @@
     <RepositoryUrl>https://github.com/cesarbmx/shared</RepositoryUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.1.1-preview1" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.0" />
@@ -44,6 +48,12 @@
     <ProjectReference Include="..\CesarBmx.Shared.Application\CesarBmx.Shared.Application.csproj" />
     <ProjectReference Include="..\CesarBmx.Shared.Authentication\CesarBmx.Shared.Authentication.csproj" />
     <ProjectReference Include="..\CesarBmx.Shared.Logging\CesarBmx.Shared.Logging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CesarBmx.Shared.Api.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -9,11 +9,11 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
 {
     public static class ErrorMessageResponseBuilder
     {
-        public static Dictionary<string, ErrorMessageResponse> BuildErrorMessages(Assembly assembly)
+        public static Dictionary<string, ErrorMessageResponse> BuildErrorMessages()
         {
             var resources = new Dictionary<string, ErrorMessageResponse>();
 
-            var query = from t in assembly.GetTypes()
+            var query = from t in Assembly.GetExecutingAssembly().GetTypes()
                 where t.IsClass && (t.Namespace != null && t.Namespace.Contains(".Application.Messages"))
                 select t;
             var types = query.ToList();

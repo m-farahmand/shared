@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CesarBmx.Shared.Api.Controllers;
 using MicroElements.Swashbuckle.FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -96,6 +97,11 @@ namespace CesarBmx.Shared.Api.Configuration
                 var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 var commentsFileName = assemblyName.Name + ".xml";
                 var commentsFile = Path.Combine(baseDirectory, commentsFileName);
+                c.IncludeXmlComments(commentsFile);
+
+                // XML documentation file (BASE)
+                commentsFileName = typeof(Z_VersionController).Assembly.GetName().Name + ".xml";
+                commentsFile = Path.Combine(baseDirectory, commentsFileName);
                 c.IncludeXmlComments(commentsFile);
             });
 

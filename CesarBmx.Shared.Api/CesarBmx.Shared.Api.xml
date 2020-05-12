@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CesarBmx.Shared.Api</name>
+    </assembly>
+    <members>
+        <member name="M:CesarBmx.Shared.Api.Configuration.SwaggerConfig.ConfigureSharedSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Type)">
+            <summary>
+            Common configuration for swagger
+            </summary>
+            <param name="services">Service collection</param>
+            <param name="appName">The name of the application (e.g. Fraud API)</param>
+            <param name="type">Swagger example type</param>
+            <returns></returns>
+        </member>
+        <member name="M:CesarBmx.Shared.Api.Controllers.X_AuditLogController.GetAllAuditLogs">
+            <summary>
+            Get all audit logs
+            </summary>
+        </member>
+        <member name="M:CesarBmx.Shared.Api.Controllers.X_AuditLogController.GetAuditLog(System.Guid)">
+            <summary>
+            Get audit log
+            </summary>
+        </member>
+        <member name="M:CesarBmx.Shared.Api.Controllers.Y_ErrorMessagesController.GetAllErrorMessages">
+            <summary>
+            Get all error messages
+            </summary>
+        </member>
+        <member name="M:CesarBmx.Shared.Api.Controllers.Z_VersionController.GetVersion">
+            <summary>
+            Get version
+            </summary>
+        </member>
+    </members>
+</doc>
