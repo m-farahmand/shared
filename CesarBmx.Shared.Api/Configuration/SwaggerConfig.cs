@@ -23,8 +23,7 @@ namespace CesarBmx.Shared.Api.Configuration
         {
             services.AddSwaggerGen(c =>
             {
-                c.AddSecurityDefinition(
-                    "Bearer", 
+                c.AddSecurityDefinition("Bearer", 
                     new OpenApiSecurityScheme
                 {
                     Description = @"Please enter the bearer token (e.g 'Bearer eyJhbGciOiJIUzI1Ni....')",
@@ -46,8 +45,33 @@ namespace CesarBmx.Shared.Api.Configuration
                             },
                             Scheme = "oauth2",
                             Name = "Bearer",
-                            In = ParameterLocation.Header,
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
 
+                c.AddSecurityDefinition("X-Audit-Date",
+                    new OpenApiSecurityScheme
+                    {
+                        Description = @"Please enter a date (e.g. 2020-05-11)",
+                        Name = "X-Audit-Date",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey
+                    });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "X-Audit-Date"
+                            },
+                            Name = "X-Audit-Date",
+                            In = ParameterLocation.Header
                         },
                         new List<string>()
                     }

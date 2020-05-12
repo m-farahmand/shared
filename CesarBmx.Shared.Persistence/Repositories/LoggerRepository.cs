@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using CesarBmx.Shared.Common.Providers;
 using CesarBmx.Shared.Domain.ModelBuilders;
 using CesarBmx.Shared.Domain.Models;
 
@@ -9,13 +10,22 @@ namespace CesarBmx.Shared.Persistence.Repositories
 {
     public class LoggerRepository<TEntity>: IRepository<TEntity> where TEntity : class, IEntity
     {
-        private readonly Repository<TEntity> _repository;
+        private readonly IRepository<TEntity> _repository;
         private readonly Repository<AuditLog> _logRepository;
 
-        public LoggerRepository(Repository<TEntity> repository, Repository<AuditLog> logRepository)
+        public LoggerRepository(Repository<TEntity> repository, AuditRepository<TEntity> auditRepository, Repository<AuditLog> logRepository,  IDateTimeProvider dateTimeProvider)
         {
             _repository = repository;
             _logRepository = logRepository;
+            var auditDate = dateTimeProvider.GetDateTime();
+            if (auditDate.HasValue && !(auditRepository is AuditRepository<AuditLog>))
+            {
+                _repository = auditRepository.LoadAudit(auditDate.Value);
+            }
+            else
+            {
+                _repository = repository;
+            }
         }
 
         public async Task<List<TEntity>> GetAll()
@@ -43,8 +53,11 @@ namespace CesarBmx.Shared.Persistence.Repositories
             // Add
             _repository.Add(entity);
 
+            // Return if audit
+            if (_repository is AuditRepository<TEntity>) return;
+
             // Log
-            _logRepository.Add(new AuditLog("Add", entity, entity.Id, entity.CreatedAt));
+            _logRepository.Add(new AuditLog("Add", entity, entity.Id, entity.Time));
         }
         public void AddRange(List<TEntity> entities)
         {
@@ -59,8 +72,11 @@ namespace CesarBmx.Shared.Persistence.Repositories
             // Update
             _repository.Update(entity);
 
+            // Return if audit
+            if (_repository is AuditRepository<TEntity>) return;
+
             // Log
-            _logRepository.Add(new AuditLog("Update", entity, entity.Id, entity.CreatedAt));
+            _logRepository.Add(new AuditLog("Update", entity, entity.Id, entity.Time));
         }
         public void UpdateRange(List<TEntity> entities)
         {
@@ -75,8 +91,11 @@ namespace CesarBmx.Shared.Persistence.Repositories
             // Remove
             _repository.Remove(entity);
 
+            // Return if audit
+            if (_repository is AuditRepository<TEntity>) return;
+
             // Log
-            _logRepository.Add(new AuditLog("Remove", entity, entity.Id, entity.CreatedAt));
+            _logRepository.Add(new AuditLog("Remove", entity, entity.Id, entity.Time));
         }
         public void RemoveRange(List<TEntity> entities)
         {

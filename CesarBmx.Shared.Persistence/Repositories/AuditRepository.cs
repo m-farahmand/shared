@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CesarBmx.Shared.Common.Providers;
 using CesarBmx.Shared.Domain.ModelBuilders;
 using CesarBmx.Shared.Domain.Models;
 using CesarBmx.Shared.Domain.Expressions;
@@ -15,15 +14,13 @@ namespace CesarBmx.Shared.Persistence.Repositories
         protected readonly List<TEntity> List;
         private readonly Repository<AuditLog> _logRepository;
 
-        public AuditRepository(Repository<AuditLog> logRepository, IDateTimeProvider dateTimeProvider)
+        public AuditRepository(Repository<AuditLog> logRepository)
         {
             List = new List<TEntity>();
             _logRepository = logRepository;
-
-            LoadAudit(dateTimeProvider.GetDateTime());
         }
 
-        private void LoadAudit(DateTime dateTime)
+        public AuditRepository<TEntity> LoadAudit(DateTime dateTime)
         {
             var auditLog = _logRepository.GetAll(AuditLogExpression.AuditLog(typeof(TEntity).Name, dateTime)).Result;
 
@@ -50,6 +47,8 @@ namespace CesarBmx.Shared.Persistence.Repositories
                         break;
                 }
             }
+
+            return this;
         }
 
         public Task<List<TEntity>> GetAll()

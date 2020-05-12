@@ -6,9 +6,9 @@ namespace CesarBmx.Shared.Domain.Expressions
 {
     public static class AuditLogExpression
     {
-        public static Expression<Func<AuditLog, bool>> AuditLog(string entity, DateTime createdAt)
+        public static Expression<Func<AuditLog, bool>> AuditLog(string entity, DateTime time)
         {
-            return x => x.Entity == entity && x.CreatedAt <= createdAt;
+            return x => x.Entity == entity && x.Time <= time;
         }
     }
 }

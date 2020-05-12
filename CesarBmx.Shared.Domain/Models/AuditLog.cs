@@ -5,16 +5,16 @@ namespace CesarBmx.Shared.Domain.Models
 {
     public class AuditLog : IEntity
     {
-        public string Id => LogId.ToString();
-        public Guid LogId { get; private set; }
+        public string Id => AuditLogId.ToString();
+        public Guid AuditLogId { get; private set; }
         public string Action { get; private set; }
         public string Entity { get; private set; }
         public string EntityId { get; private set; }
         public string Json { get; private set; }
-        public DateTime CreatedAt { get; private set; }
+        public DateTime Time { get; private set; }
 
         public AuditLog() { }
-        public AuditLog(string action, object entity, string entityId, DateTime createdAt)
+        public AuditLog(string action, object entity, string entityId, DateTime time)
         {
             var entityName = entity.GetType().Name;
             if (entityName == "List`1")
@@ -22,11 +22,11 @@ namespace CesarBmx.Shared.Domain.Models
                 entityName = entity.GetType().GetGenericArguments()[0].Name + "List";
             }
 
-            LogId = Guid.NewGuid();
+            AuditLogId = Guid.NewGuid();
             Action = action;
             Entity = entityName;
             EntityId = entityId;
-            CreatedAt = createdAt;
+            Time = time;
             Json = JsonConvertHelper.SerializeObjectRaw(entity);
         }
         public T ModelJsonToObject<T>()

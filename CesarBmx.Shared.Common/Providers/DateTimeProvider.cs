@@ -4,6 +4,6 @@ namespace CesarBmx.Shared.Common.Providers
 {
     public interface IDateTimeProvider
     {
-        DateTime GetDateTime();
+        DateTime? GetDateTime();
     }
 }
