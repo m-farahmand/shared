@@ -4,7 +4,7 @@ using CesarBmx.Shared.Common.Extensions;
 namespace CesarBmx.Shared.Tests.Common
 {
     [TestClass]
-    public class StringAsUrlTest
+    public class IsUrlTest
     {
         [TestMethod]
         public void Test_ReturnTrueForValidUrl()

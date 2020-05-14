@@ -11,7 +11,7 @@ namespace CesarBmx.Shared.Tests.Health
     /// <notes>https://www.stevefenton.co.uk/2020/04/check-certificate-expiry-date-in-net-core/</notes>
     /// <returns></returns>
     [TestClass]
-    public class HealthCheckTests
+    public class SslCertificateTests
     {
         [TestMethod]
         public void Test_MissingCertificate()

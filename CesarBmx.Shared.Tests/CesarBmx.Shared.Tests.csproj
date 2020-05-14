@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CesarBmx.Shared.Authentication\CesarBmx.Shared.Authentication.csproj" />
     <ProjectReference Include="..\CesarBmx.Shared.Caching\CesarBmx.Shared.Caching.csproj" />
+    <ProjectReference Include="..\CesarBmx.Shared.Common\CesarBmx.Shared.Common.csproj" />
     <ProjectReference Include="..\CesarBmx.Shared.Health\CesarBmx.Shared.Health.csproj" />
     <ProjectReference Include="..\CesarBmx.Shared.Logging\CesarBmx.Shared.Logging.csproj" />
   </ItemGroup>
