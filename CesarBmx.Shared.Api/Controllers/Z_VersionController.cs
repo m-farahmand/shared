@@ -27,7 +27,7 @@ namespace CesarBmx.Shared.Api.Controllers
             var response = new VersionResponse();
 
             // Build
-            response.Build(Assembly.GetExecutingAssembly());
+            response.Build(Assembly.GetEntryAssembly());
                 
             // Return
             return Ok(response);
