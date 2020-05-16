@@ -6,7 +6,7 @@ using CesarBmx.Shared.Logging.Extensions;
 namespace CesarBmx.Shared.Tests.Logging
 {
     [TestClass]
-    public class DictionaryAsSplunkKeyValueStringTest
+    public class DictionaryAsSplunkKeyValueString
     {
         [TestMethod]
         public void Test()
@@ -25,7 +25,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual("ObjectId=1, ObjectName=MyObject", str);
         }
         [TestMethod]
-        public void Test_WithNull()
+        public void Test_Null()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -41,7 +41,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual("ObjectId=1, SubClass=null", str);
         }
         [TestMethod]
-        public void Test_WithDate()
+        public void Test_Date()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -57,39 +57,24 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual($"ObjectId=1, SubClass=\"{DateTime.MinValue}\"", str);
         }
         [TestMethod]
-        public void Test_WithFailed()
-        {
-            //Arrange
-            var dictionary = new Dictionary<string, object>
-            {
-                {"Failed", "Exception message with spaces"}
-            };
-
-            //Act
-            var str = dictionary.AsSplunkKeyValueString();
-
-            //Assert
-            Assert.AreEqual("Failed=\"Exception message with spaces\"", str);
-        }
-        [TestMethod]
-        public void Test_WithSpaces()
+        public void Test_Spaces()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
             {
                 {"ObjectId", "1"},
                 {"ObjectName", "MyObject"},
-                {"ObjectDescription", "Blah blah blah"}
+                {"ObjectDescription", "Blah blah blah blah blah blah blah "} // Only 30 characters will show
             };
 
             //Act
             var str = dictionary.AsSplunkKeyValueString();
 
             //Assert
-            Assert.AreEqual("ObjectId=1, ObjectName=MyObject, ObjectDescription=\"{...}\"", str);
+            Assert.AreEqual("ObjectId=1, ObjectName=MyObject, ObjectDescription=\"Blah blah blah blah blah blah  {...}\"", str);
         }
         [TestMethod]
-        public void Test_WithSubDirectory()
+        public void Test_SubDirectory()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>

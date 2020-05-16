@@ -7,7 +7,7 @@ using CesarBmx.Shared.Authentication.Helpers;
 namespace CesarBmx.Shared.Tests.Authentication
 {
     [TestClass]
-    public class SetIdentityValuesTest
+    public class SetIdentityValues
     {
 
         public class User
@@ -16,7 +16,7 @@ namespace CesarBmx.Shared.Tests.Authentication
             [Identity(ClaimTypes.Name)] public string Name { get; set; }
         }
         [TestMethod]
-        public void Test_SetIdentityValues()
+        public void Test_1()
         {
             //Arrange
             var user = new User();

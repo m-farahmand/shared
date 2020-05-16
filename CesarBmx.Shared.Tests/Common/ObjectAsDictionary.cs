@@ -5,7 +5,7 @@ using CesarBmx.Shared.Common.Extensions;
 namespace CesarBmx.Shared.Tests.Common
 {
     [TestClass]
-    public class ObjectAsDictionaryTest
+    public class ObjectAsDictionary
     {
         private enum MyEnum
         {
@@ -13,7 +13,7 @@ namespace CesarBmx.Shared.Tests.Common
         }
 
         [TestMethod]
-        public void Test()
+        public void Test_Object()
         {
             //Arrange
             var obj = new { ObjectId = 1, ObjectName = "MyObject" };
@@ -27,7 +27,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("MyObject", dictionary["ObjectName"]);
         }
         [TestMethod]
-        public void Test_WithArray()
+        public void Test_Array()
         {
             //Arrange
             var obj = new { ObjectId = 1, ObjectName = new[] { "A", "B" } };
@@ -41,7 +41,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("[A,B]", dictionary["ObjectName"]);
         }
         [TestMethod]
-        public void Test_WithSubClass()
+        public void Test_SubClass()
         {
             //Arrange
             var subClass = new { SubClassId = 2, SubClassName = "MySubClass" };
@@ -59,7 +59,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("MySubClass", ((Dictionary<string, object>)dictionary["SubClass"])["SubClassName"]);
         }
         [TestMethod]
-        public void Test_WithCustomEnum()
+        public void Test_CustomEnum()
         {
             //Arrange
             var subClass = new { SubClassId = 2, SubClassName = "MySubClass" };

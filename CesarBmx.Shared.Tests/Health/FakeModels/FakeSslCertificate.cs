@@ -1,13 +1,12 @@
 ﻿using System;
-using CesarBmx.Shared.Health.Models;
 
-namespace CesarBmx.Shared.Tests.Health.FakeData
+namespace CesarBmx.Shared.Tests.Health.FakeModels
 {
    public static class FakeSslCertificate
    {
-       public static SslCertificate ValidCertificate()
+       public static Shared.Health.Models.SslCertificate ValidCertificate()
        {
-           return new SslCertificate
+           return new Shared.Health.Models.SslCertificate
            {
                HasCertificate = true,
                NotAfter = DateTime.UtcNow.AddMonths(6),
@@ -17,43 +16,43 @@ namespace CesarBmx.Shared.Tests.Health.FakeData
                Issuer = "CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O=\"GoDaddy.com, Inc.\", L=Scottsdale, S=Arizona, C=US"
         };
        }
-       public static SslCertificate MissingCertificate()
+       public static Shared.Health.Models.SslCertificate MissingCertificate()
        {
            var certificate = ValidCertificate();
            certificate.HasCertificate = false;
            return certificate;
        }
-        public static SslCertificate ExpiredCertificate()
+        public static Shared.Health.Models.SslCertificate ExpiredCertificate()
        {
            var certificate = ValidCertificate();
            certificate.NotAfter = DateTime.UtcNow.AddDays(-2);
            return certificate;
        }
-       public static SslCertificate AboutToExpireCertificate()
+       public static Shared.Health.Models.SslCertificate AboutToExpireCertificate()
        {
            var certificate = ValidCertificate();
            certificate.NotAfter = DateTime.UtcNow.AddDays(2);
            return certificate;
        }
-        public static SslCertificate NotValidYetCertificate()
+        public static Shared.Health.Models.SslCertificate NotValidYetCertificate()
         {
             var certificate = ValidCertificate();
             certificate.NotBefore = DateTime.UtcNow.AddDays(2);
             return certificate;
         }
-        public static SslCertificate NoSubjectCertificate()
+        public static Shared.Health.Models.SslCertificate NoSubjectCertificate()
         {
             var certificate = ValidCertificate();
             certificate.Subject = string.Empty;
             return certificate;
         }
-        public static SslCertificate NoIssuerCertificate()
+        public static Shared.Health.Models.SslCertificate NoIssuerCertificate()
         {
             var certificate = ValidCertificate();
             certificate.Issuer = string.Empty;
             return certificate;
         }
-        public static SslCertificate V2Certificate()
+        public static Shared.Health.Models.SslCertificate V2Certificate()
         {
             var certificate = ValidCertificate();
             certificate.Version = 2;

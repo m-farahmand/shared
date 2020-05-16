@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using CesarBmx.Shared.Tests.Health.FakeData;
+using CesarBmx.Shared.Tests.Health.FakeModels;
 
 
 namespace CesarBmx.Shared.Tests.Health
@@ -11,7 +11,7 @@ namespace CesarBmx.Shared.Tests.Health
     /// <notes>https://www.stevefenton.co.uk/2020/04/check-certificate-expiry-date-in-net-core/</notes>
     /// <returns></returns>
     [TestClass]
-    public class SslCertificateTests
+    public class SslCertificate
     {
         [TestMethod]
         public void Test_MissingCertificate()
@@ -58,7 +58,7 @@ namespace CesarBmx.Shared.Tests.Health
         }
 
         [TestMethod]
-        public void Test_CertVersionIsNotGreaterThanTwo()
+        public void Test_CertificateVersionIsNotGreaterThanTwo()
         {
             //Arrange
             var sslCertificate = FakeSslCertificate.V2Certificate();
@@ -69,7 +69,7 @@ namespace CesarBmx.Shared.Tests.Health
         }
 
         [TestMethod]
-        public void Test_CertHasNoSubject()
+        public void Test_CertificatetHasNoSubject()
         {
             //Arrange
             var sslCertificate = FakeSslCertificate.NoSubjectCertificate();
@@ -80,7 +80,7 @@ namespace CesarBmx.Shared.Tests.Health
         }
 
         [TestMethod]
-        public void Test_CertHasNoIssuer()
+        public void Test_CertificateHasNoIssuer()
         {
             //Arrange
             var sslCertificate = FakeSslCertificate.NoIssuerCertificate();

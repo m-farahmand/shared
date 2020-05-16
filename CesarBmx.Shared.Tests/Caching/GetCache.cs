@@ -7,7 +7,7 @@ using CesarBmx.Shared.Caching.Extensions;
 namespace CesarBmx.Shared.Tests.Caching
 {
     [TestClass]
-    public class GetCacheTest
+    public class GetCache
     {
         [TestMethod]
         public void Test_WithNamespace()

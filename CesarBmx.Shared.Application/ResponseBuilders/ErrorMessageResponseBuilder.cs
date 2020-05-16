@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using CesarBmx.Shared.Application.Messages;
 using CesarBmx.Shared.Application.Responses;
 
 
@@ -13,17 +14,25 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
         {
             var resources = new Dictionary<string, ErrorMessageResponse>();
 
-            var query = from t in Assembly.GetExecutingAssembly().GetTypes()
-                where t.IsClass && (t.Namespace != null && t.Namespace.Contains(".Application.Messages"))
-                select t;
-            var types = query.ToList();
+            var applicationAssemblies = new List<Assembly>();
+            var  path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            query = from t in typeof(ErrorMessage).Assembly.GetTypes()
-                where t.IsClass && (t.Namespace != null && t.Namespace.Contains(".Application.Messages"))
-                select t;
+            if (path == null) return resources;
 
-            types.AddRange(query.ToList());
+            foreach (var dll in Directory.GetFiles(path, "*Application.dll"))
+                applicationAssemblies.Add(Assembly.LoadFile(dll));
 
+            var types = new List<Type>();
+
+         
+            foreach (var applicationAssembly in applicationAssemblies)
+            {
+                var query = from t in applicationAssembly.GetTypes()
+                    where t.IsClass && (t.Namespace != null && t.Namespace.Contains(".Application.Messages"))
+                    select t;
+                types.AddRange(query.ToList());
+            }
+            
             foreach (var type in types)
             {
                 var constants = type.GetFields(BindingFlags.Public | BindingFlags.Static |

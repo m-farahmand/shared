@@ -7,7 +7,7 @@ namespace CesarBmx.Shared.Tests.Common
     public class IsUrlTest
     {
         [TestMethod]
-        public void Test_ReturnTrueForValidUrl()
+        public void Test_ValidUrl()
         {
             //Arrange
             const string url = "https://wwww.google.ca";
@@ -20,7 +20,7 @@ namespace CesarBmx.Shared.Tests.Common
         }
 
         [TestMethod]
-        public void Test_ReturnFalseForInvalidValidUrl()
+        public void Test_InvalidValidUrl()
         {
             //Arrange
             const string url = "htt://wwww.google.ca";

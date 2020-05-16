@@ -7,7 +7,7 @@ namespace CesarBmx.Shared.Tests.Common
     public class StringToReadable
     {
         [TestMethod]
-        public void Test_ToReadable_OneWord()
+        public void Test_OneWord()
         {
             //Arrange
             var modelName = "User";
@@ -20,7 +20,7 @@ namespace CesarBmx.Shared.Tests.Common
         }
 
         [TestMethod]
-        public void Test_ToReadable_TwoWords()
+        public void Test_TwoWords()
         {
             //Arrange
             var modelName = "UserRole";
@@ -32,7 +32,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("user role", modelName);
         }
         [TestMethod]
-        public void Test_ToReadable_ThreeWords()
+        public void Test_ThreeWords()
         {
             //Arrange
             var modelName = "UserRoleWhatever";
