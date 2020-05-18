@@ -8,22 +8,31 @@ namespace CesarBmx.Shared.Api.Configuration
     {
         public static IServiceCollection AddAudit(this IServiceCollection services)
         {
-           
-                services.AddScoped<Repository<AuditLog>, Repository<AuditLog>>();
-                services.AddScoped<IRepository<AuditLog>, Repository<AuditLog>>();
-                services.AddScoped<AuditRepository<AuditLog>, AuditRepository<AuditLog>>();
-           
+
+            services.AddScoped<Repository<AuditLog>, Repository<AuditLog>>();
+            services.AddScoped<IRepository<AuditLog>, Repository<AuditLog>>();
+            services.AddScoped<AuditRepository<AuditLog>, AuditRepository<AuditLog>>();
 
             // Return
             return services;
         }
-        public static IServiceCollection AddAudit<TEntity>(
+        public static IServiceCollection AddAuditRepository<TEntity>(
             this IServiceCollection services)
             where TEntity : class, IEntity
         {
             services.AddScoped<Repository<TEntity>, Repository<TEntity>>();
             services.AddScoped<IRepository<TEntity>, LoggerRepository<TEntity>>();
             services.AddScoped<AuditRepository<TEntity>, AuditRepository<TEntity>>();
+
+            // Return
+            return services;
+        }
+        public static IServiceCollection AddRepository<TEntity>(
+            this IServiceCollection services)
+            where TEntity : class, IEntity
+        {
+            services.AddScoped<Repository<TEntity>>();
+            services.AddScoped<IRepository<TEntity>, Repository<TEntity>>();
 
             // Return
             return services;

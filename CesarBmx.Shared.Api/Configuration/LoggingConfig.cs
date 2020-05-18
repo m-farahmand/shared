@@ -17,5 +17,15 @@ namespace CesarBmx.Shared.Api.Configuration
 
             return hostBuilder;
         }
+        public static ILoggingBuilder ConfigureSharedLogging(this ILoggingBuilder loggingBuilder)
+        {
+            loggingBuilder.AddFilter("Default", LogLevel.Information);
+            loggingBuilder.AddFilter("System", LogLevel.None);
+            loggingBuilder.AddFilter("Microsoft", LogLevel.None);
+            loggingBuilder.AddFilter("Hangfire", LogLevel.None);
+
+
+            return loggingBuilder;
+        }
     }
 }
