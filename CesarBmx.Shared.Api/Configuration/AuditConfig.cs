@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CesarBmx.Shared.Application.Services;
+using Microsoft.Extensions.DependencyInjection;
 using CesarBmx.Shared.Domain.Models;
 using CesarBmx.Shared.Persistence.Repositories;
 
@@ -12,6 +13,8 @@ namespace CesarBmx.Shared.Api.Configuration
             services.AddScoped<Repository<AuditLog>, Repository<AuditLog>>();
             services.AddScoped<IRepository<AuditLog>, Repository<AuditLog>>();
             services.AddScoped<AuditRepository<AuditLog>, AuditRepository<AuditLog>>();
+
+            services.AddScoped<AuditLogService>();
 
             // Return
             return services;

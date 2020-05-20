@@ -10,9 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using CesarBmx.Shared.Api.Helpers;
-using CesarBmx.Shared.Api.Settings;
 using CesarBmx.Shared.Application.Messages;
 using CesarBmx.Shared.Application.Responses;
+using CesarBmx.Shared.Application.Settings;
 
 namespace CesarBmx.Shared.Api.Configuration
 {

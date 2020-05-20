@@ -1,7 +1,7 @@
 ﻿
 
 
-namespace CesarBmx.Shared.Api.Settings
+namespace CesarBmx.Shared.Application.Settings
 {
     public  class AuthenticationSettings
     {

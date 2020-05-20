@@ -18,7 +18,8 @@ namespace CesarBmx.Shared.Api.Configuration
             // Configure
             app.UseHangfireDashboard("/hangfire", new DashboardOptions
             {
-                Authorization = new[] { enableBasicAuthentication ? (IDashboardAuthorizationFilter)new HangfireBasicAuthorization() : new HangfireNonAuthorization() }
+                Authorization = new[] { enableBasicAuthentication ? (IDashboardAuthorizationFilter)new HangfireBasicAuthorization() : new HangfireNonAuthorization() },
+                
             });
             app.UseHangfireServer();
 
