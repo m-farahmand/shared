@@ -5,7 +5,7 @@ using System;
 
 namespace CesarBmx.Shared.Domain.Models
 {
-    public interface IEntity
+    public interface IAuditableEntity
     {
         string Id { get; }
         DateTime Time { get; }

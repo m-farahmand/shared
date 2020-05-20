@@ -10,7 +10,7 @@ namespace CesarBmx.Shared.Application.FakeResponses
         {
             return new AuditLogResponse
             {              
-                AuditLogId = Guid.NewGuid(),
+                LogId = Guid.NewGuid(),
                 Action = "Add",
                 Entity = "Indicator",
                 EntityId = "master_price",

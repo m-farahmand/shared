@@ -6,7 +6,7 @@ using CesarBmx.Shared.Domain.Models;
 
 namespace CesarBmx.Shared.Persistence.Repositories
 {
-    public interface IRepository<TEntity> where TEntity: IEntity
+    public interface IRepository<TEntity> where TEntity: IAuditableEntity
     {
         Task<List<TEntity>> GetAll();
         Task<List<TEntity>> GetAll(Expression<Func<TEntity, bool>> expression);

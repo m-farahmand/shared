@@ -21,7 +21,7 @@ namespace CesarBmx.Shared.Api.Configuration
         }
         public static IServiceCollection AddAuditRepository<TEntity>(
             this IServiceCollection services)
-            where TEntity : class, IEntity
+            where TEntity : class, IAuditableEntity
         {
             services.AddScoped<Repository<TEntity>, Repository<TEntity>>();
             services.AddScoped<IRepository<TEntity>, LoggerRepository<TEntity>>();
@@ -32,7 +32,7 @@ namespace CesarBmx.Shared.Api.Configuration
         }
         public static IServiceCollection AddRepository<TEntity>(
             this IServiceCollection services)
-            where TEntity : class, IEntity
+            where TEntity : class, IAuditableEntity
         {
             services.AddScoped<Repository<TEntity>>();
             services.AddScoped<IRepository<TEntity>, Repository<TEntity>>();

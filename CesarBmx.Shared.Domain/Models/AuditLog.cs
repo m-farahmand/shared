@@ -3,10 +3,10 @@ using CesarBmx.Shared.Serialization.Helpers;
 
 namespace CesarBmx.Shared.Domain.Models
 {
-    public class AuditLog : IEntity
+    public class AuditLog : IAuditableEntity
     {
-        public string Id => AuditLogId.ToString();
-        public Guid AuditLogId { get; private set; }
+        public string Id => LogId.ToString();
+        public Guid LogId { get; private set; }
         public string Action { get; private set; }
         public string Entity { get; private set; }
         public string EntityId { get; private set; }
@@ -22,7 +22,7 @@ namespace CesarBmx.Shared.Domain.Models
                 entityName = entity.GetType().GetGenericArguments()[0].Name + "List";
             }
 
-            AuditLogId = Guid.NewGuid();
+            LogId = Guid.NewGuid();
             Action = action;
             Entity = entityName;
             EntityId = entityId;

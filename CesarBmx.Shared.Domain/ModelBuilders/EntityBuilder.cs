@@ -6,7 +6,7 @@ namespace CesarBmx.Shared.Domain.ModelBuilders
 {
     public static class EntityBuilder
     {
-        public static List<T> BuildEntitiesToAdd<T>(List<T> entities, List<T> newEntities) where T : class, IEntity
+        public static List<T> BuildEntitiesToAdd<T>(List<T> entities, List<T> newEntities) where T : class, IAuditableEntity
         {
             // Add those not found in the list
             var entitiesToAdd = new List<T>();
@@ -19,7 +19,7 @@ namespace CesarBmx.Shared.Domain.ModelBuilders
             // Return
             return entitiesToAdd;
         }
-        public static List<T> BuildEntitiesToUpdate<T>(List<T> entities, List<T> newEntities) where T : class, IEntity
+        public static List<T> BuildEntitiesToUpdate<T>(List<T> entities, List<T> newEntities) where T : class, IAuditableEntity
         {
             // Update those found in the list
             var entitiesToUpdate= new List<T>();
@@ -32,7 +32,7 @@ namespace CesarBmx.Shared.Domain.ModelBuilders
             // Return
             return entitiesToUpdate;
         }
-        public static List<T> BuildEntitiesToRemove<T>(List<T> entities, List<T> newEntities) where T : class, IEntity
+        public static List<T> BuildEntitiesToRemove<T>(List<T> entities, List<T> newEntities) where T : class, IAuditableEntity
         {
             // Remove those no longer in the list
             var entitiesToRemove = new List<T>();

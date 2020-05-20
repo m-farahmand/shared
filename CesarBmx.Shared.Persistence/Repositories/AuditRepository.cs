@@ -9,7 +9,7 @@ using CesarBmx.Shared.Domain.Expressions;
 
 namespace CesarBmx.Shared.Persistence.Repositories
 {
-    public class AuditRepository<TEntity>: IRepository<TEntity> where TEntity: class, IEntity
+    public class AuditRepository<TEntity>: IRepository<TEntity> where TEntity: class, IAuditableEntity
     {
         protected readonly List<TEntity> List;
         private readonly Repository<AuditLog> _logRepository;

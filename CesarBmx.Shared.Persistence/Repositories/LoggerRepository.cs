@@ -8,7 +8,7 @@ using CesarBmx.Shared.Domain.Models;
 
 namespace CesarBmx.Shared.Persistence.Repositories
 {
-    public class LoggerRepository<TEntity>: IRepository<TEntity> where TEntity : class, IEntity
+    public class LoggerRepository<TEntity>: IRepository<TEntity> where TEntity : class, IAuditableEntity
     {
         private readonly IRepository<TEntity> _repository;
         private readonly Repository<AuditLog> _logRepository;
