@@ -2,7 +2,7 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class VersionResponse
+    public class Version
     {
         public string VersionNumber { get; set; }
         public string BuildDateTime { get; set; }

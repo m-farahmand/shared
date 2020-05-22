@@ -6,7 +6,7 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
 {
     public static class VersionResponseBuilder
     {
-        public static VersionResponse Build(this VersionResponse versionResponse, Assembly assembly)
+        public static Version Build(this Version versionResponse, Assembly assembly)
         {
             var assemblyDate = assembly.Date();
             versionResponse.BuildDateTime = assemblyDate.ToString("yyyy/MM/dd HH:mm");

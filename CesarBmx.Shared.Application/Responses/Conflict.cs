@@ -3,9 +3,9 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class ConflictResponse : ErrorResponse
+    public class Conflict : Error
     {
-        public ConflictResponse(string code, string message)
+        public Conflict(string code, string message)
             : base(code, 409, message)
         { }
     }

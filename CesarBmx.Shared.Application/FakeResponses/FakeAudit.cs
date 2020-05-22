@@ -4,11 +4,11 @@ using CesarBmx.Shared.Application.Responses;
 
 namespace CesarBmx.Shared.Application.FakeResponses
 {
-    public static class AuditLogFakeResponse
+    public static class FakeAudit
     {
-        public static AuditLogResponse GetFake_Add_Indicator()
+        public static AuditLog GetFake_Add_Indicator()
         {
-            return new AuditLogResponse
+            return new AuditLog
             {              
                 LogId = Guid.NewGuid(),
                 Action = "Add",
@@ -18,9 +18,9 @@ namespace CesarBmx.Shared.Application.FakeResponses
                 Json = "{}"
             };
         }
-        public static List<AuditLogResponse> GetFake_List()
+        public static List<AuditLog> GetFake_List()
         {
-            return new List<AuditLogResponse>
+            return new List<AuditLog>
             {
                 GetFake_Add_Indicator()
             };

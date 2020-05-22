@@ -6,9 +6,9 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using CesarBmx.Shared.Application.Exceptions;
-using CesarBmx.Shared.Application.Messages;
 using CesarBmx.Shared.Application.Responses;
 using CesarBmx.Shared.Logging.Extensions;
+using ErrorMessage = CesarBmx.Shared.Application.Messages.ErrorMessage;
 
 namespace CesarBmx.Shared.Api.Middlewares
 {
@@ -38,27 +38,27 @@ namespace CesarBmx.Shared.Api.Middlewares
         private Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             // Response
-            ErrorResponse errorResponse;
+            Error errorResponse;
             switch (exception)
             {
                 case UnauthorizedException _: // 401
                     var unauthorizedException = (UnauthorizedException)exception;
-                    errorResponse = new UnauthorizedResponse(nameof(ErrorMessage.Unauthorized), unauthorizedException.Message);
+                    errorResponse = new Unauthorized(nameof(ErrorMessage.Unauthorized), unauthorizedException.Message);
                     break;
                 case ForbiddenException _:    // 403
                     var forbiddenException = (ForbiddenException)exception;
-                    errorResponse = new ForbiddenResponse(nameof(ErrorMessage.Forbidden), forbiddenException.Message);
+                    errorResponse = new Forbidden(nameof(ErrorMessage.Forbidden), forbiddenException.Message);
                     break;
                 case NotFoundException _:     // 404
                     var notFoundException = (NotFoundException)exception;
-                    errorResponse = new NotFoundResponse(nameof(ErrorMessage.NotFound), notFoundException.Message);
+                    errorResponse = new NotFound(nameof(ErrorMessage.NotFound), notFoundException.Message);
                     break;
                 case ConflictException _:     // 409
                     var conflictException = (ConflictException)exception;
-                    errorResponse = new ConflictResponse(nameof(ErrorMessage.Conflict), conflictException.Message);
+                    errorResponse = new Conflict(nameof(ErrorMessage.Conflict), conflictException.Message);
                     break;
                 default:                      // 500
-                    errorResponse = new InternalServerErrorResponse(nameof(ErrorMessage.InternalServerError), ErrorMessage.InternalServerError);
+                    errorResponse = new InternalServerError(nameof(ErrorMessage.InternalServerError), ErrorMessage.InternalServerError);
                     // Log error
                     _logger.LogSplunkError(exception);
                     break;

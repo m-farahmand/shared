@@ -8,9 +8,9 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace CesarBmx.Shared.Api.Controllers
 {
-    [SwaggerResponse(500, Type = typeof(InternalServerErrorResponse))]
-    [SwaggerResponse(401, Type = typeof(UnauthorizedResponse))]
-    [SwaggerResponse(403, Type = typeof(ForbiddenResponse))]
+    [SwaggerResponse(500, Type = typeof(InternalServerError))]
+    [SwaggerResponse(401, Type = typeof(Unauthorized))]
+    [SwaggerResponse(403, Type = typeof(Forbidden))]
     // ReSharper disable once InconsistentNaming
     public class X_AuditLogController : Controller
     {
@@ -26,7 +26,7 @@ namespace CesarBmx.Shared.Api.Controllers
         /// </summary>
         [HttpGet]
         [Route("api/audit-logs")]
-        [SwaggerResponse(200, Type = typeof(List<AuditLogResponse>))]
+        [SwaggerResponse(200, Type = typeof(List<AuditLog>))]
         [SwaggerOperation(Tags = new[] { "Audit logs" }, OperationId = "Logs_GetAllAuditLogs")]
         public async Task<IActionResult> GetAllAuditLogs()
         {
@@ -42,8 +42,8 @@ namespace CesarBmx.Shared.Api.Controllers
         /// </summary>
         [HttpGet]
         [Route("api/audit-logs/{logId}", Name = "Logs_GetLog")]
-        [SwaggerResponse(200, Type = typeof(AuditLogResponse))]
-        [SwaggerResponse(404, Type = typeof(ErrorResponse))]
+        [SwaggerResponse(200, Type = typeof(AuditLog))]
+        [SwaggerResponse(404, Type = typeof(Error))]
         [SwaggerOperation(Tags = new[] { "Audit logs" }, OperationId = "Logs_GetAuditLog")]
         public async Task<IActionResult> GetAuditLog(Guid logId)
         {

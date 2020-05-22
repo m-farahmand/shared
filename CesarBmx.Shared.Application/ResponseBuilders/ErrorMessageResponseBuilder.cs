@@ -10,9 +10,9 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
 {
     public static class ErrorMessageResponseBuilder
     {
-        public static Dictionary<string, ErrorMessageResponse> BuildErrorMessages()
+        public static Dictionary<string, ErrorMessage> BuildErrorMessages()
         {
-            var resources = new Dictionary<string, ErrorMessageResponse>();
+            var resources = new Dictionary<string, ErrorMessage>();
 
             var applicationAssemblies = new List<Assembly>();
             var  path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -39,7 +39,7 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
                                                BindingFlags.FlattenHierarchy)
                     .Where(fi => fi.IsLiteral && !fi.IsInitOnly).ToList();
 
-                var errorMessage = new ErrorMessageResponse();
+                var errorMessage = new ErrorMessage();
 
                 foreach (var constant in constants)
                 {

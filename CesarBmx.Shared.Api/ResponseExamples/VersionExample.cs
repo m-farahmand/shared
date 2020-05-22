@@ -4,11 +4,11 @@ using Swashbuckle.AspNetCore.Filters;
 
 namespace CesarBmx.Shared.Api.ResponseExamples
 {
-    public class BadRequestResponseExample : IExamplesProvider<BadRequestResponse>
+    public class VersionExample : IExamplesProvider<Version>
     {
-        public BadRequestResponse GetExamples()
+        public Version GetExamples()
         {
-            return ErrorFakeResponse.GetFake_BadRequest();
+            return FakeVersion.GetFake_Production();
         }
     }
 }

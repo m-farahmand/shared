@@ -3,9 +3,9 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class BadRequestResponse : ErrorResponse
+    public class BadRequest : Error
     {
-        public BadRequestResponse(string code, string message)
+        public BadRequest(string code, string message)
         : base(code, 400, message)
         { }
     }

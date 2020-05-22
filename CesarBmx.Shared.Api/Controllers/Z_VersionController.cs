@@ -7,9 +7,9 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace CesarBmx.Shared.Api.Controllers
 {
-    [SwaggerResponse(500, Type = typeof(InternalServerErrorResponse))]
-    [SwaggerResponse(401, Type = typeof(UnauthorizedResponse))]
-    [SwaggerResponse(403, Type = typeof(ForbiddenResponse))]
+    [SwaggerResponse(500, Type = typeof(InternalServerError))]
+    [SwaggerResponse(401, Type = typeof(Unauthorized))]
+    [SwaggerResponse(403, Type = typeof(Forbidden))]
     // ReSharper disable once InconsistentNaming
     [AllowAnonymous]
     public class Z_VersionController : Controller
@@ -19,12 +19,12 @@ namespace CesarBmx.Shared.Api.Controllers
         /// </summary>
         [HttpGet]
         [Route("api/version")]
-        [SwaggerResponse(200, Type = typeof(VersionResponse))]
+        [SwaggerResponse(200, Type = typeof(Version))]
         [SwaggerOperation(Tags = new[] { "Version" }, OperationId = "Version_GetVersion")]
         public IActionResult GetVersion()
         {
             // Response
-            var response = new VersionResponse();
+            var response = new Version();
 
             // Build
             response.Build(Assembly.GetEntryAssembly());

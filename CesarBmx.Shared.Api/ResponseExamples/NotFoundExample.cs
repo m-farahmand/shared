@@ -3,11 +3,11 @@ using CesarBmx.Shared.Application.Responses;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace CesarBmx.Shared.Api.ResponseExamples
-{ public class ConflictResponseExample : IExamplesProvider<ConflictResponse>
+{ public class NotFoundExample : IExamplesProvider<NotFound>
     {
-        public ConflictResponse GetExamples()
+        public NotFound GetExamples()
         {
-            return ErrorFakeResponse.GetFake_Conflict();
+            return FakeError.GetFake_NotFound();
         }
     }
 }

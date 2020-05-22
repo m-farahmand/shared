@@ -3,9 +3,9 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class ForbiddenResponse : ErrorResponse
+    public class Forbidden : Error
     {
-        public ForbiddenResponse(string code, string message)
+        public Forbidden(string code, string message)
             : base(code, 403, message)
         { }
     }

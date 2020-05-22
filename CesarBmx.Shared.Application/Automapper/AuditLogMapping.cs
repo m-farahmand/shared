@@ -1,5 +1,4 @@
 using AutoMapper;
-using CesarBmx.Shared.Application.Responses;
 using CesarBmx.Shared.Domain.Models;
 
 namespace CesarBmx.Shared.Application.Automapper
@@ -8,7 +7,7 @@ namespace CesarBmx.Shared.Application.Automapper
     {
         public AuditLogMapping()
         {
-            CreateMap<AuditLog, AuditLogResponse>();
+            CreateMap<AuditLog, Responses.AuditLog>();
         }
     }
 }

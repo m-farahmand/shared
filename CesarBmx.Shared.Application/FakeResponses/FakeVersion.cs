@@ -3,11 +3,11 @@
 
 namespace CesarBmx.Shared.Application.FakeResponses
 {
-    public static class VersionFakeResponse
+    public static class FakeVersion
     {
-        public static VersionResponse GetFake_Production()
+        public static Version GetFake_Production()
         {
-            return new VersionResponse
+            return new Version
             {
                 VersionNumber = "1.0.0.0",
                 BuildDateTime = "2017/08/30 06:20",

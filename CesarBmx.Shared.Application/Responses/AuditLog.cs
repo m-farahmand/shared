@@ -3,7 +3,7 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class AuditLogResponse
+    public class AuditLog
     {
         public Guid LogId { get; set; }
         public string Action { get; set; }

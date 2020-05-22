@@ -3,9 +3,9 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public class UnauthorizedResponse : ErrorResponse
+    public class Unauthorized : Error
     {
-        public UnauthorizedResponse(string code, string message)
+        public Unauthorized(string code, string message)
             : base(code, 401, message)
         { }
     }

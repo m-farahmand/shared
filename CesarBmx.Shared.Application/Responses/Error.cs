@@ -3,13 +3,13 @@
 
 namespace CesarBmx.Shared.Application.Responses
 {
-    public abstract class ErrorResponse
+    public abstract class Error
     {
         public string Code { get; set; }
         public int Status { get; set; }
         public string Message { get; set; }
 
-        public ErrorResponse(string code, int status, string message)
+        public Error(string code, int status, string message)
         {
             Code = code;
             Status = status;

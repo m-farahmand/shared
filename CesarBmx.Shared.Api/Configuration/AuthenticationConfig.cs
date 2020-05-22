@@ -10,9 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using CesarBmx.Shared.Api.Helpers;
-using CesarBmx.Shared.Application.Messages;
 using CesarBmx.Shared.Application.Responses;
 using CesarBmx.Shared.Application.Settings;
+using ErrorMessage = CesarBmx.Shared.Application.Messages.ErrorMessage;
 
 namespace CesarBmx.Shared.Api.Configuration
 {
@@ -61,7 +61,7 @@ namespace CesarBmx.Shared.Api.Configuration
                         {
                             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                             context.Response.ContentType = "application/json; charset=utf-8";
-                            var errorResponse = new UnauthorizedResponse(nameof(ErrorMessage.Unauthorized),
+                            var errorResponse = new Unauthorized(nameof(ErrorMessage.Unauthorized),
                                 ErrorMessage.Unauthorized);
                             var result = JsonConvert.SerializeObject(errorResponse);
                             return context.Response.WriteAsync(result);
@@ -70,7 +70,7 @@ namespace CesarBmx.Shared.Api.Configuration
                         {
                             context.Response.StatusCode = StatusCodes.Status403Forbidden;
                             context.Response.ContentType = "application/json; charset=utf-8";
-                            var errorResponse = new UnauthorizedResponse(nameof(ErrorMessage.Forbidden),
+                            var errorResponse = new Unauthorized(nameof(ErrorMessage.Forbidden),
                                 ErrorMessage.Forbidden);
                             var result = JsonConvert.SerializeObject(errorResponse);
                             return context.Response.WriteAsync(result);
