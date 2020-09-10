@@ -10,10 +10,6 @@ namespace CesarBmx.Shared.Logging.Extensions
         public static void LogSplunkInformation<T>(this ILogger logger, T payload)
         {
             var payloadName = typeof(T).Name;
-
-            if (payloadName.EndsWith("Request"))
-                payloadName = payloadName.Remove(payloadName.Length - 7);
-
             logger.LogSplunkInformation(payloadName, payload);
         }
         public static void LogSplunkInformation(this ILogger logger, string eventId, object payload)
@@ -33,9 +29,18 @@ namespace CesarBmx.Shared.Logging.Extensions
             var str = string.Empty;
             foreach (var item in dictionary)
             {
-                if (item.Value is Dictionary<string, object> obj)
+                if (item.Value is Dictionary<string, object> obj1)
                 {
-                    str += obj.AsSplunkKeyValueString(item.Key) + ", ";
+                    str += obj1.AsSplunkKeyValueString(item.Key) + ", ";
+                }
+                else if (item.Value is List<string> obj2)
+                {
+                    var index = 1;
+                    foreach (var str1 in obj2)
+                    {
+                        str += item.Key + "_" + index + "=" + str1 + ", ";
+                        index++;
+                    }
                 }
                 else
                 {
@@ -56,7 +61,10 @@ namespace CesarBmx.Shared.Logging.Extensions
                     }
                     else
                     {
-                        str += pref + item.Key + "=\"" + $"{item.Value.ToString().Substring(0, 30)}" + " {...}\", ";
+                        var maxSize = 30;
+                        var longText = item.Value.ToString();
+                        if (longText.Length > maxSize) longText = longText.Substring(0, 30);
+                        str += pref + item.Key + "=\"" + $"{longText}" + " {...}\", ";
                     }
                 }
             }
