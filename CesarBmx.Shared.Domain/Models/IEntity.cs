@@ -1,13 +1,10 @@
 ﻿
 
 
-using System;
-
 namespace CesarBmx.Shared.Domain.Models
 {
-    public interface IAuditableEntity
+    public interface IEntity
     {
         string Id { get; }
-        DateTime Time { get; }
     }
 }

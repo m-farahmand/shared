@@ -1,6 +1,5 @@
 ﻿using CesarBmx.Shared.Application.Settings;
 using HealthChecks.UI.Client;
-using HealthChecks.UI.InMemory.Storage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Configuration;
