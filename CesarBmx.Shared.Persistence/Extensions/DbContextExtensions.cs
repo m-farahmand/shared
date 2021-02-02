@@ -7,7 +7,7 @@ namespace CesarBmx.Shared.Persistence.Extensions
 {
     public static class DbContextExtensions
     {
-        public static void UpdateCollection<TEntity>(this DbContext dbContext, List<TEntity> currentEntities, List<TEntity> newEntities) where TEntity : class, IEntity
+        public static void UpdateCollection<TEntity>(this DbContext dbContext, List<TEntity> currentEntities, List<TEntity> newEntities) where TEntity : class, IEntity<TEntity>
         {
             dbContext.AddRange(EntityBuilder.BuildEntitiesToAdd(currentEntities, newEntities));
             dbContext.UpdateRange(EntityBuilder.BuildEntitiesToUpdate(currentEntities, newEntities));

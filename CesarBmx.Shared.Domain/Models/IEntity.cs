@@ -3,8 +3,9 @@
 
 namespace CesarBmx.Shared.Domain.Models
 {
-    public interface IEntity
+    public interface IEntity<T> 
     {
         string Id { get; }
+        T Update(T t);
     }
 }
