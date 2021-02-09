@@ -8,7 +8,7 @@ namespace CesarBmx.Shared.Common.Extensions
     {
         public static string VersionNumber(this Assembly assembly)
         {
-            return assembly.GetName().Version.ToString();
+            return assembly.GetName().Version?.ToString();
         }
         public static DateTime Date(this Assembly assembly)
         {

@@ -43,7 +43,7 @@ namespace CesarBmx.Shared.Application.ResponseBuilders
 
                 foreach (var constant in constants)
                 {
-                    errorMessage.Add(constant.Name, constant.GetValue(null).ToString());
+                    errorMessage.Add(constant.Name, constant.GetValue(null)?.ToString());
                 }
                 resources.Add(type.Name.Replace("Message", ""), errorMessage);
             }

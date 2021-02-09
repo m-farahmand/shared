@@ -14,10 +14,10 @@ namespace CesarBmx.Shared.Api.Configuration
 
                 foreach (var p in permissions.GetFields(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public))
                 {
-                    var permission = p.GetValue(null).ToString(); // static classes cannot be instanced, so use null...
+                    var permission = p.GetValue(null)?.ToString(); // static classes cannot be instanced, so use null...
 
                     // Add as many policies as permissions
-                    options.AddPolicy(permission, policy =>
+                    options.AddPolicy(permission ?? throw new InvalidOperationException() , policy =>
                     {
                         policy.RequireAuthenticatedUser();
                         policy.RequireClaim("permission", permission);

@@ -27,10 +27,10 @@ namespace CesarBmx.Shared.Api.Helpers
             _authenticationSettings = authenticationSettings;
         }
 
-        protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+        protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             var partnerKey = Context.Request.Headers["Authorization"].ToString();
-            if (partnerKey != _authenticationSettings.ApiKey)  return AuthenticateResult.NoResult();
+            if (partnerKey != _authenticationSettings.ApiKey)  return Task.FromResult(AuthenticateResult.NoResult());
 
             var claims = new[]
             {
@@ -41,7 +41,7 @@ namespace CesarBmx.Shared.Api.Helpers
             var principal = new ClaimsPrincipal(identity);
             var ticket = new AuthenticationTicket(principal, Scheme.Name );
 
-             return AuthenticateResult.Success(ticket);
+             return Task.FromResult(AuthenticateResult.Success(ticket));
         }
         protected override async Task HandleChallengeAsync(AuthenticationProperties properties)
         {

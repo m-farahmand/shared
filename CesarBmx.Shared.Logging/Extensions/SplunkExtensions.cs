@@ -63,7 +63,7 @@ namespace CesarBmx.Shared.Logging.Extensions
                     {
                         var maxSize = 30;
                         var longText = item.Value.ToString();
-                        if (longText.Length > maxSize) longText = longText.Substring(0, 30);
+                        if (longText?.Length > maxSize) longText = longText.Substring(0, 30);
                         str += pref + item.Key + "=\"" + $"{longText}" + " {...}\", ";
                     }
                 }

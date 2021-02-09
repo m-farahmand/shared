@@ -63,7 +63,7 @@ namespace CesarBmx.Shared.Health.Models
 
             var httpClientHandler = new HttpClientHandler
             {
-                ServerCertificateCustomValidationCallback = (request, cert, chain, policyErrors) =>
+                ServerCertificateCustomValidationCallback = (_, cert, _, _) =>
                 {
                     NotAfter = cert.NotAfter;
                     NotBefore = cert.NotBefore;

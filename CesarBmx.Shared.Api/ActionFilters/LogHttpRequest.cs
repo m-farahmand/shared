@@ -25,7 +25,7 @@ namespace CesarBmx.Shared.Api.ActionFilters
         public override void OnResultExecuted(ResultExecutedContext context)
         {
             base.OnResultExecuted(context);
-            var actionName = context.HttpContext.GetRouteData().Values["action"].ToString();
+            var actionName = context.HttpContext.GetRouteData().Values["action"]?.ToString();
             _stopwatch.Stop();
             _logger.LogSplunkInformation("HttpRequestExecutionTime", new
             {

@@ -58,7 +58,7 @@ namespace CesarBmx.Shared.Api.Configuration
                     new OpenApiInfo
                     {
                         Title = appName,
-                        Version = assemblyName.Version.ToString()
+                        Version = assemblyName.Version?.ToString()
                     }); 
                 c.ExampleFilters();
                 c.OperationFilter<AddResponseHeadersFilter>(); 

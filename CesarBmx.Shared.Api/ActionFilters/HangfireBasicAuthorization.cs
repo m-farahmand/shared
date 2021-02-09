@@ -28,7 +28,7 @@ namespace CesarBmx.Shared.Api.ActionFilters
                 return false;
             }
 
-            var parameter = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(authValues.Parameter));
+            var parameter = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(authValues.Parameter ?? string.Empty));
             var parts = parameter.Split(':');
 
             if (parts.Length < 2)
