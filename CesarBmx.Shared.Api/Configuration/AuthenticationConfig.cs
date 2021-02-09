@@ -41,7 +41,8 @@ namespace CesarBmx.Shared.Api.Configuration
                         NameClaimType = ClaimTypes.NameIdentifier,
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key),
-                        ValidateIssuer = false,
+                        ValidIssuer = authenticationSettings.Issuer,
+                        ValidateIssuer = true,
                         ValidateAudience = false,
                         ValidateLifetime = true,
                         ClockSkew = TimeSpan.Zero
@@ -85,6 +86,13 @@ namespace CesarBmx.Shared.Api.Configuration
         {
             services.AddAuthentication("FakeAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, FakeAuthenticationHandler>("FakeAuthentication", null);
+
+            return services;
+        }
+        public static IServiceCollection UseApiKeyAuthentication(this IServiceCollection services)
+        {
+            services.AddAuthentication("ApiKeyAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("ApiKeyAuthentication", null);
 
             return services;
         }

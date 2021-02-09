@@ -52,32 +52,6 @@ namespace CesarBmx.Shared.Api.Configuration
                     }
                 });
 
-                c.AddSecurityDefinition("X-Audit-Date",
-                    new OpenApiSecurityScheme
-                    {
-                        Description = @"Please enter a date (e.g. 2020-05-11)",
-                        Name = "X-Audit-Date",
-                        In = ParameterLocation.Header,
-                        Type = SecuritySchemeType.ApiKey
-                    });
-
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "X-Audit-Date"
-                            },
-                            Name = "X-Audit-Date",
-                            In = ParameterLocation.Header
-                        },
-                        new List<string>()
-                    }
-                });
-
                 var assemblyName = type.Assembly.GetName();
 
                 c.SwaggerDoc("v1",

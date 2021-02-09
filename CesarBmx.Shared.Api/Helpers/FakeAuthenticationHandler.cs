@@ -19,9 +19,12 @@ namespace CesarBmx.Shared.Api.Helpers
 
         protected override  Task<AuthenticateResult> HandleAuthenticateAsync()
         {
+            var user = Context.Request.Headers["Authorization"].ToString();
+            if (string.IsNullOrEmpty(user)) user = "testuser";
+
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, "testuser"),
+                new Claim(ClaimTypes.NameIdentifier, user),
                 new Claim(ClaimTypes.Name, "Test user")
             };
             var identity = new ClaimsIdentity(claims, "Test");
