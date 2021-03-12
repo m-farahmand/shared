@@ -55,6 +55,7 @@ namespace CesarBmx.Shared.Logging.Extensions
                     {
                         str += pref + item.Key + $"=\"{item.Value}\", ";
                     }
+                    // ReSharper disable once PossibleNullReferenceException
                     else if (!item.Value.ToString().Contains(" "))
                     {
                         str += pref + item.Key + "=" + value + ", ";
