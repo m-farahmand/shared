@@ -5,9 +5,15 @@ namespace CesarBmx.Shared.Common.Extensions
 {
     public static class DecimalExtensions
     {
+        /// <summary>
+        /// It removes the ending zeros
+        /// </summary>
+        /// <param name="value">Value to normalize</param>
+        /// <returns></returns>
         public static decimal Normalize(this decimal value)
         {
-            return value / 1.000000000000000000000000000000000m;
+            var result = value / 1.000000000000000000000000000000000m;
+            return result;
         }
     }
 }
