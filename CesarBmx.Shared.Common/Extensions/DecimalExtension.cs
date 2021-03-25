@@ -3,7 +3,7 @@
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class DecimalExtensions
+    public static class DecimalExtension
     {
         /// <summary>
         /// It removes the ending zeros

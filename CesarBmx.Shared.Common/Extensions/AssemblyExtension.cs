@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class AssemblyExtensions
+    public static class AssemblyExtension
     {
         public static string VersionNumber(this Assembly assembly)
         {

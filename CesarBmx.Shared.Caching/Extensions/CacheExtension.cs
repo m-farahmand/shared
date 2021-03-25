@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace CesarBmx.Shared.Caching.Extensions
 {
-    public static class CacheExtensions
+    public static class CacheExtension
     {
         public static async Task<TResponse> GetCache<TResponse>(this IDistributedCache cache, string key, Task<TResponse> task, int absoluteExpirationInSeconds)
         {

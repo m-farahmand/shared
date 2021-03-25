@@ -5,7 +5,7 @@ using CesarBmx.Shared.Common.Extensions;
 
 namespace CesarBmx.Shared.Logging.Extensions
 {
-    public static class SplunkExtensions
+    public static class SplunkExtension
     {
         public static void LogSplunkInformation<T>(this ILogger logger, T payload)
         {

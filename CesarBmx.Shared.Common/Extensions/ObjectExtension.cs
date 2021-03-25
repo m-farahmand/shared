@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class ObjectExtensions
+    public static class ObjectExtension
     {
         public static Dictionary<string, object> AsDictionary(this object obj, BindingFlags bindingAttr = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
         {

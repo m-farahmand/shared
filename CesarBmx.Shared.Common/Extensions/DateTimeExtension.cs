@@ -2,7 +2,7 @@
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class DateTimeExtensions
+    public static class DateTimeExtension
     {
         public static string DaysHoursMinutesAndSecondsSinceDate(this DateTime dateTime)
         {

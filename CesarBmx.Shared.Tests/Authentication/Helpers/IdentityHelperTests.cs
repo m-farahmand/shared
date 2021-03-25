@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CesarBmx.Shared.Authentication.Attributes;
 using CesarBmx.Shared.Authentication.Helpers;
 
-namespace CesarBmx.Shared.Tests.Authentication
+namespace CesarBmx.Shared.Tests.Authentication.Helpers
 {
     [TestClass]
-    public class SetIdentityValues
+    public class IdentityHelperTests
     {
 
         public class User
@@ -16,7 +16,7 @@ namespace CesarBmx.Shared.Tests.Authentication
             [Identity(ClaimTypes.Name)] public string Name { get; set; }
         }
         [TestMethod]
-        public void Test_1()
+        public void Test_SetIdentityValues()
         {
             //Arrange
             var user = new User();

@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using CesarBmx.Shared.Caching.Extensions;
 
-namespace CesarBmx.Shared.Tests.Caching
+namespace CesarBmx.Shared.Tests.Caching.Extensions
 {
     [TestClass]
-    public class GetCache
+    public class CacheExtensionTests
     {
         [TestMethod]
-        public void Test_WithNamespace()
+        public void Test_GetCache_WithNamespace()
         {
             //Arrange
             var mockedDistributedCache = new Mock<IDistributedCache>();

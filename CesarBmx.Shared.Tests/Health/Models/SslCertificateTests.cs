@@ -3,7 +3,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using CesarBmx.Shared.Tests.Health.FakeModels;
 
 
-namespace CesarBmx.Shared.Tests.Health
+namespace CesarBmx.Shared.Tests.Health.Models
 {
     /// <summary>
     /// Check SSL Cert Expire date.
@@ -11,7 +11,7 @@ namespace CesarBmx.Shared.Tests.Health
     /// <notes>https://www.stevefenton.co.uk/2020/04/check-certificate-expiry-date-in-net-core/</notes>
     /// <returns></returns>
     [TestClass]
-    public class SslCertificate
+    public class SslCertificateTests
     {
         [TestMethod]
         public void Test_MissingCertificate()

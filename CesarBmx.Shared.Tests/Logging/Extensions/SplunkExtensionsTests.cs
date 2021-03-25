@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CesarBmx.Shared.Logging.Extensions;
 
-namespace CesarBmx.Shared.Tests.Logging
+namespace CesarBmx.Shared.Tests.Logging.Extensions
 {
     [TestClass]
-    public class DictionaryAsSplunkKeyValueString
+    public class SplunkExtensionsTests
     {
         [TestMethod]
-        public void Test()
+        public void Test_AsSplunkKeyValueString_Object()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -25,7 +25,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual("ObjectId=1, ObjectName=MyObject", str);
         }
         [TestMethod]
-        public void Test_Null()
+        public void Test_AsSplunkKeyValueString_NullSubClass()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -41,7 +41,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual("ObjectId=1, SubClass=null", str);
         }
         [TestMethod]
-        public void Test_Date()
+        public void Test_AsSplunkKeyValueString_Date()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -57,7 +57,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual($"ObjectId=1, SubClass=\"{DateTime.MinValue}\"", str);
         }
         [TestMethod]
-        public void Test_Spaces()
+        public void Test_AsSplunkKeyValueString_Spaces()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>
@@ -74,7 +74,7 @@ namespace CesarBmx.Shared.Tests.Logging
             Assert.AreEqual("ObjectId=1, ObjectName=MyObject, ObjectDescription=\"Blah blah blah blah blah blah  {...}\"", str);
         }
         [TestMethod]
-        public void Test_SubDirectory()
+        public void Test_AsSplunkKeyValueString_SubDirectory()
         {
             //Arrange
             var dictionary = new Dictionary<string, object>

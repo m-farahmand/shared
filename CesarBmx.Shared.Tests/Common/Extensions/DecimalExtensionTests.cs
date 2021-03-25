@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CesarBmx.Shared.Common.Extensions;
 
-namespace CesarBmx.Shared.Tests.Common
+namespace CesarBmx.Shared.Tests.Common.Extensions
 {
     [TestClass]
-    public class NormalizeDecimal
+    public class DecimalExtensionTests
     {
         [TestMethod]
         public void Test_Normalize()

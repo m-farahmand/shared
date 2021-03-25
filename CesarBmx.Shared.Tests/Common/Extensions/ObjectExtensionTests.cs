@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CesarBmx.Shared.Common.Extensions;
 
-namespace CesarBmx.Shared.Tests.Common
+namespace CesarBmx.Shared.Tests.Common.Extensions
 {
     [TestClass]
-    public class ObjectAsDictionary
+    public class ObjectExtensionTests
     {
         private enum MyEnum
         {
@@ -13,7 +13,7 @@ namespace CesarBmx.Shared.Tests.Common
         }
 
         [TestMethod]
-        public void Test_Object()
+        public void Test_AsDictionary_Object()
         {
             //Arrange
             var obj = new { ObjectId = 1, ObjectName = "MyObject" };
@@ -27,7 +27,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("MyObject", dictionary["ObjectName"]);
         }
         [TestMethod]
-        public void Test_Array()
+        public void Test_AsDictionary_Array()
         {
             //Arrange
             var obj = new { ObjectId = 1, ObjectName = new[] { "A", "B" } };
@@ -41,7 +41,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("[A,B]", dictionary["ObjectName"]);
         }
         [TestMethod]
-        public void Test_SubClass()
+        public void Test_AsDictionary_SubClass()
         {
             //Arrange
             var subClass = new { SubClassId = 2, SubClassName = "MySubClass" };
@@ -59,7 +59,7 @@ namespace CesarBmx.Shared.Tests.Common
             Assert.AreEqual("MySubClass", ((Dictionary<string, object>)dictionary["SubClass"])["SubClassName"]);
         }
         [TestMethod]
-        public void Test_CustomEnum()
+        public void Test_AsDictionary_CustomEnum()
         {
             //Arrange
             var subClass = new { SubClassId = 2, SubClassName = "MySubClass" };

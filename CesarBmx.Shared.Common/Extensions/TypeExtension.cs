@@ -2,7 +2,7 @@
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class TypeExtensions
+    public static class TypeExtension
     {
         public static string ToAlias(this Type type)
         {

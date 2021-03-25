@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class DictionaryExtensions
+    public static class DictionaryExtension
     {
         public static TValue GetValueOrDefault<TKey, TValue>
         (this IDictionary<TKey, TValue> dictionary,

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace CesarBmx.Shared.Common.Extensions
 {
-    public static class StringExtensions
+    public static class StringExtension
     {
         public static bool IsUrl(this string input)
         {
