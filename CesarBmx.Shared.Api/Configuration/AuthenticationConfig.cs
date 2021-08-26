@@ -23,7 +23,7 @@ namespace CesarBmx.Shared.Api.Configuration
         {
             // Grab AuthenticationSettings
             var authenticationSettings = new AuthenticationSettings();
-            configuration.GetSection("AuthenticationSettings").Bind(authenticationSettings);
+            configuration.GetSection("Authentication").Bind(authenticationSettings);
 
             // Configure JWT authentication
             var key = Encoding.ASCII.GetBytes(authenticationSettings.Secret);
@@ -89,7 +89,7 @@ namespace CesarBmx.Shared.Api.Configuration
 
             return services;
         }
-        public static IServiceCollection UseApiKeyAuthentication(this IServiceCollection services)
+        public static IServiceCollection UseSharedApiKeyAuthentication(this IServiceCollection services)
         {
             services.AddAuthentication("ApiKeyAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("ApiKeyAuthentication", null);
